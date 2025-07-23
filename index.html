@@ -266,6 +266,155 @@
             font-style: italic;
         }
 
+        .copilot-panel {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 16px;
+            padding: 25px;
+            margin-top: 20px;
+            color: white;
+            display: none;
+        }
+
+        .copilot-panel.active {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .copilot-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .copilot-icon {
+            font-size: 2rem;
+            margin-right: 15px;
+        }
+
+        .copilot-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .metric-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .metric-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .metric-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .suggestions-section {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .suggestion-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 10px;
+            border-left: 4px solid #4CAF50;
+        }
+
+        .suggestion-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .suggestion-desc {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .conversation-monitor {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .conversation-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 10px;
+            border-left: 4px solid #FF9800;
+        }
+
+        .conversation-status {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+
+        .status-active {
+            background: #4CAF50;
+        }
+
+        .status-pending {
+            background: #FF9800;
+        }
+
+        .status-closed {
+            background: #9E9E9E;
+        }
+
+        .copilot-toggle-btn {
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .copilot-toggle-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        }
+
+        .copilot-toggle-btn:active {
+            transform: translateY(0);
+        }
+
+        .copilot-panel h3 {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            color: white;
+        }
+
+        .copilot-panel .suggestions-section h3,
+        .copilot-panel .conversation-monitor h3 {
+            color: white;
+            margin-bottom: 15px;
+        }
+
         .footer {
             text-align: center;
             margin-top: 40px;
@@ -670,6 +819,107 @@
                             </div>
                         </div>
                     </div>
+                    <div class="agent">
+                        <div class="agent-name">🤖 Copiloto de Atendimento e Vendas</div>
+                        <div class="agent-desc">Monitora conversas, cria métricas e dá sugestões para melhoria de conversão</div>
+                        <div class="agent-metrics">
+                            <div class="metric">
+                                <span class="metric-label">💰 Impacto Receita:</span>
+                                <div class="metric-value">
+                                    <select class="revenue-select">
+                                        <option value="">Selecione</option>
+                                        <option value="muito-alto" class="revenue-very-high">Muito Alto</option>
+                                        <option value="alto" class="revenue-high">Alto</option>
+                                        <option value="medio" class="revenue-medium">Médio</option>
+                                        <option value="baixo" class="revenue-low">Baixo</option>
+                                        <option value="muito-baixo" class="revenue-very-low">Muito Baixo</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">🎯 Prioridade:</span>
+                                <select class="priority-select">
+                                    <option value="">Selecione</option>
+                                    <option value="muito-alta" class="priority-very-high">Muito Alta</option>
+                                    <option value="alta" class="priority-high">Alta</option>
+                                    <option value="media" class="priority-medium">Média</option>
+                                    <option value="baixa" class="priority-low">Baixa</option>
+                                    <option value="muito-baixa" class="priority-very-low">Muito Baixa</option>
+                                </select>
+                            </div>
+                            <div class="metric">
+                                <button id="toggleCopilotBtn" class="copilot-toggle-btn" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 0.8rem; margin-top: 10px; width: 100%;">
+                                    📊 Ver Dashboard do Copiloto
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Painel do Copiloto de Atendimento e Vendas -->
+            <div class="copilot-panel" id="copilotPanel">
+                <div class="copilot-header">
+                    <div class="copilot-icon">🤖</div>
+                    <div class="copilot-title">Copiloto de Atendimento e Vendas - Dashboard</div>
+                </div>
+                
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-value">87%</div>
+                        <div class="metric-label">Taxa de Conversão</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">12</div>
+                        <div class="metric-label">Conversas Ativas</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">R$ 45.2k</div>
+                        <div class="metric-label">Receita Gerada</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">4.8</div>
+                        <div class="metric-label">Satisfação Média</div>
+                    </div>
+                </div>
+
+                <div class="suggestions-section">
+                    <h3>💡 Sugestões para Melhoria de Conversão</h3>
+                    <div class="suggestion-item">
+                        <div class="suggestion-title">🎯 Personalizar Abordagem</div>
+                        <div class="suggestion-desc">Identificamos que pacientes com dor aguda respondem melhor a abordagens diretas sobre alívio imediato</div>
+                    </div>
+                    <div class="suggestion-item">
+                        <div class="suggestion-title">⏰ Otimizar Horários</div>
+                        <div class="suggestion-desc">Conversas entre 14h-16h têm 23% mais conversão. Sugerimos priorizar contatos neste período</div>
+                    </div>
+                    <div class="suggestion-item">
+                        <div class="suggestion-title">💰 Estratégia de Preços</div>
+                        <div class="suggestion-desc">Pacientes que recebem 2 opções de orçamento convertem 35% mais que os que recebem apenas 1</div>
+                    </div>
+                    <div class="suggestion-item">
+                        <div class="suggestion-title">📱 Canal de Comunicação</div>
+                        <div class="suggestion-desc">WhatsApp tem 40% mais conversão que ligações. Recomendamos migrar follow-ups para este canal</div>
+                    </div>
+                </div>
+
+                <div class="conversation-monitor">
+                    <h3>📊 Monitoramento de Conversas</h3>
+                    <div class="conversation-item">
+                        <strong>Maria Silva</strong> - Consulta de Clareamento
+                        <span class="conversation-status status-active">Ativa</span>
+                        <div style="font-size: 0.9rem; margin-top: 5px;">Última interação: 5 min atrás | Probabilidade de conversão: 78%</div>
+                    </div>
+                    <div class="conversation-item">
+                        <strong>João Santos</strong> - Tratamento Ortodôntico
+                        <span class="conversation-status status-pending">Pendente</span>
+                        <div style="font-size: 0.9rem; margin-top: 5px;">Última interação: 2h atrás | Probabilidade de conversão: 45%</div>
+                    </div>
+                    <div class="conversation-item">
+                        <strong>Ana Costa</strong> - Implante Dentário
+                        <span class="conversation-status status-closed">Fechada</span>
+                        <div style="font-size: 0.9rem; margin-top: 5px;">Convertida em R$ 8.500 | Tempo até conversão: 3 dias</div>
+                    </div>
                 </div>
             </div>
 
@@ -989,6 +1239,8 @@
         document.addEventListener('DOMContentLoaded', function() {
             const prioritySelects = document.querySelectorAll('.priority-select');
             const revenueSelects = document.querySelectorAll('.revenue-select');
+            const copilotPanel = document.getElementById('copilotPanel');
+            const toggleCopilotBtn = document.getElementById('toggleCopilotBtn');
             
             prioritySelects.forEach(select => {
                 select.addEventListener('change', function() {
@@ -1000,6 +1252,46 @@
                 select.addEventListener('change', function() {
                     updateRevenueColor(this);
                 });
+            });
+
+            // Função para mostrar/ocultar painel do copiloto
+            function toggleCopilotPanel() {
+                const copilotAgent = document.querySelector('.agent-name:contains("Copiloto de Atendimento e Vendas")');
+                if (copilotAgent) {
+                    const agent = copilotAgent.closest('.agent');
+                    const revenueSelect = agent.querySelector('.revenue-select');
+                    const prioritySelect = agent.querySelector('.priority-select');
+                    
+                    // Mostrar painel se qualquer valor for selecionado
+                    if (revenueSelect.value || prioritySelect.value) {
+                        copilotPanel.classList.add('active');
+                    } else {
+                        copilotPanel.classList.remove('active');
+                    }
+                }
+            }
+
+            // Adicionar event listeners específicos para o copiloto
+            document.querySelectorAll('.agent').forEach(agent => {
+                const agentName = agent.querySelector('.agent-name');
+                if (agentName && agentName.textContent.includes('Copiloto de Atendimento e Vendas')) {
+                    const revenueSelect = agent.querySelector('.revenue-select');
+                    const prioritySelect = agent.querySelector('.priority-select');
+                    
+                    if (revenueSelect) {
+                        revenueSelect.addEventListener('change', function() {
+                            updateRevenueColor(this);
+                            toggleCopilotPanel();
+                        });
+                    }
+                    
+                    if (prioritySelect) {
+                        prioritySelect.addEventListener('change', function() {
+                            updatePriorityColor(this);
+                            toggleCopilotPanel();
+                        });
+                    }
+                }
             });
 
             // Função para salvar dados no localStorage
@@ -1044,6 +1336,9 @@
                             }
                         }
                     });
+                    
+                    // Verificar se deve mostrar o painel do copiloto após carregar dados
+                    toggleCopilotPanel();
                 }
             }
 
@@ -1054,6 +1349,90 @@
 
             // Carregar dados salvos na inicialização
             loadData();
+
+            // Event listener para o botão de toggle
+            toggleCopilotBtn.addEventListener('click', function() {
+                copilotPanel.classList.toggle('active');
+                if (copilotPanel.classList.contains('active')) {
+                    toggleCopilotBtn.textContent = '🔒 Ocultar Dashboard do Copiloto';
+                    updateCopilotMetrics();
+                } else {
+                    toggleCopilotBtn.textContent = '📊 Ver Dashboard do Copiloto';
+                }
+            });
+
+            // Função para atualizar métricas do copiloto
+            function updateCopilotMetrics() {
+                const metricValues = document.querySelectorAll('.copilot-panel .metric-value');
+                
+                // Simular dados em tempo real
+                const conversionRate = Math.floor(Math.random() * 20) + 80; // 80-100%
+                const activeConversations = Math.floor(Math.random() * 8) + 8; // 8-16
+                const revenue = Math.floor(Math.random() * 20) + 40; // 40-60k
+                const satisfaction = (Math.random() * 0.6 + 4.2).toFixed(1); // 4.2-4.8
+
+                if (metricValues[0]) metricValues[0].textContent = conversionRate + '%';
+                if (metricValues[1]) metricValues[1].textContent = activeConversations;
+                if (metricValues[2]) metricValues[2].textContent = 'R$ ' + revenue + '.2k';
+                if (metricValues[3]) metricValues[3].textContent = satisfaction;
+            }
+
+            // Função para gerar sugestões dinâmicas
+            function generateDynamicSuggestions() {
+                const suggestions = [
+                    {
+                        title: '🎯 Personalizar Abordagem',
+                        desc: 'Identificamos que pacientes com dor aguda respondem melhor a abordagens diretas sobre alívio imediato'
+                    },
+                    {
+                        title: '⏰ Otimizar Horários',
+                        desc: 'Conversas entre 14h-16h têm 23% mais conversão. Sugerimos priorizar contatos neste período'
+                    },
+                    {
+                        title: '💰 Estratégia de Preços',
+                        desc: 'Pacientes que recebem 2 opções de orçamento convertem 35% mais que os que recebem apenas 1'
+                    },
+                    {
+                        title: '📱 Canal de Comunicação',
+                        desc: 'WhatsApp tem 40% mais conversão que ligações. Recomendamos migrar follow-ups para este canal'
+                    },
+                    {
+                        title: '🎁 Ofertas Personalizadas',
+                        desc: 'Pacientes que recebem descontos baseados em seu histórico têm 28% mais probabilidade de conversão'
+                    },
+                    {
+                        title: '📞 Follow-up Inteligente',
+                        desc: 'Contatos realizados 24h após primeira interação têm 45% mais sucesso que contatos imediatos'
+                    }
+                ];
+
+                const suggestionsSection = document.querySelector('.suggestions-section');
+                if (suggestionsSection) {
+                    const suggestionItems = suggestionsSection.querySelectorAll('.suggestion-item');
+                    suggestionItems.forEach((item, index) => {
+                        if (suggestions[index]) {
+                            const title = item.querySelector('.suggestion-title');
+                            const desc = item.querySelector('.suggestion-desc');
+                            if (title) title.textContent = suggestions[index].title;
+                            if (desc) desc.textContent = suggestions[index].desc;
+                        }
+                    });
+                }
+            }
+
+            // Atualizar métricas a cada 30 segundos quando o painel estiver ativo
+            setInterval(() => {
+                if (copilotPanel.classList.contains('active')) {
+                    updateCopilotMetrics();
+                }
+            }, 30000);
+
+            // Gerar sugestões dinâmicas quando o painel for aberto
+            document.addEventListener('click', function(e) {
+                if (e.target === toggleCopilotBtn && copilotPanel.classList.contains('active')) {
+                    generateDynamicSuggestions();
+                }
+            });
         });
     </script>
 </body>
