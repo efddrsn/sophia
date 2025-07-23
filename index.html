@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentes AI para Clínicas Odontológicas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(20px);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .funnel {
+            display: grid;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .stage {
+            background: #fff;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            border-left: 6px solid;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .stage:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .stage.attraction {
+            border-left-color: #e74c3c;
+        }
+
+        .stage.conversion {
+            border-left-color: #f39c12;
+        }
+
+        .stage.engagement {
+            border-left-color: #3498db;
+        }
+
+        .stage.retention {
+            border-left-color: #27ae60;
+        }
+
+        .stage-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .stage-icon {
+            font-size: 2rem;
+            margin-right: 15px;
+        }
+
+        .stage-title {
+            flex: 1;
+        }
+
+        .stage-title h2 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+            color: #2c3e50;
+        }
+
+        .stage-title p {
+            color: #7f8c8d;
+            font-size: 0.95rem;
+        }
+
+        .agents-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+        }
+
+        .agent {
+            background: #f8f9fa;
+            padding: 15px 20px;
+            border-radius: 12px;
+            border: 1px solid #e9ecef;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .agent:hover {
+            background: #e3f2fd;
+            border-color: #2196f3;
+            transform: translateX(5px);
+        }
+
+        .agent::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+            transition: width 0.3s ease;
+        }
+
+        .agent:hover::before {
+            width: 8px;
+        }
+
+        .agent-name {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+            font-size: 0.95rem;
+        }
+
+        .agent-desc {
+            color: #5a6c7d;
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+
+        .suggested {
+            opacity: 0.8;
+            font-style: italic;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid #e9ecef;
+        }
+
+        .footer p {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .agents-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stage {
+                padding: 20px;
+            }
+        }
+
+        .flow-arrow {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.5rem;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🦷 Agentes AI para Clínicas Odontológicas</h1>
+            <p>Sistema completo de automação inteligente para otimizar cada etapa do atendimento ao paciente</p>
+        </div>
+
+        <div class="funnel">
+            <!-- ATRAÇÃO -->
+            <div class="stage attraction">
+                <div class="stage-header">
+                    <div class="stage-icon">🧲</div>
+                    <div class="stage-title">
+                        <h2>1. ATRAÇÃO</h2>
+                        <p>Gerar novos leads qualificados (Top of Funnel)</p>
+                    </div>
+                </div>
+                <div class="agents-grid">
+                    <div class="agent">
+                        <div class="agent-name">Agente de Pesquisa de Leads</div>
+                        <div class="agent-desc">Busca novos contatos e oportunidades automaticamente</div>
+                    </div>
+                    <div class="agent">
+                        <div class="agent-name">Agente de Aquisição (CRM)</div>
+                        <div class="agent-desc">Organiza leads e cria campanhas para atração</div>
+                    </div>
+                    <div class="agent">
+                        <div class="agent-name">Agente de Persona</div>
+                        <div class="agent-desc">Define perfis de pacientes ideais para segmentação</div>
+                    </div>
+                    <div class="agent suggested">
+                        <div class="agent-name">Agente de Marketing de Conteúdo</div>
+                        <div class="agent-desc">Cria materiais educativos e promocionais</div>
+                    </div>
+                    <div class="agent suggested">
+                        <div class="agent-name">Agente de Campanhas Publicitárias</div>
+                        <div class="agent-desc">Ativa mídia paga em redes sociais e Google</div>
+                    </div>
+                    <div class="agent">
+                        <div class="agent-name">Agente de Matchmaking</div>
+                        <div class="agent-desc">Direciona paciente para clínica/profissional ideal</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flow-arrow">⬇️</div>
+
+            <!-- CONVERSÃO -->
+            <div class="stage conversion">
+                <div class="stage-header">
+                    <div class="stage-icon">🔄</div>
+                    <div class="stage-title">
+                        <h2>2. CONVERSÃO</h2>
+                        <p>Transformar leads em pacientes ativos (Middle of Funnel)</p>
+                    </div>
+                </div>
+                <div class="agents-grid">
+                    <div class="agent">
+                        <div class="agent-name">Agente de Pitch</div>
+                        <div class="agent-desc">Elabora propostas comerciais personalizadas</div>
+                    </div>
+                    <div class="agent">
+                        <div class="agent-name">Agente de Elaboração de Orçamentos</div>
+                        <div class="agent-desc">Monta orçamentos baseados no perfil do paciente</div>
+                    </div>
+                    <div class="agent">
+                        <div class="agent-name">Agente de Acompanhamento</div>
+                        <div class="agent-desc">Follow-up de propostas e decisões pendentes</div>
+                    </div>
+                    <div class="agent">
+                        <div class="agent-name">Agente de Agendamento</div>
+                        <div class="agent-desc">Agenda primeira consulta ou avaliação</div>
+                    </div>
+                    <div class="agent">
+                        <div class="agent-name">Agente de Triagem/Qualificação</div>
+                        <div class="agent-desc">Entende necessidades e faz encaminhamento correto</div>
+                    </div>
+                    <div class="agent">
+                        <div class="agent-name">Agente de Fila de Espera</div>
+                        <div class="agent-desc">Ocupa horários vagos e converte indecisos</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flow-arrow">⬇️</div>
+
+            <!-- ENGAJAMENTO -->
+            <div class="stage engagement">
+                <div class="stage-header">
+                    <div class="stage-icon">💬</div>
+                    <div class="stage-title">
+                        <h2>3. ENGAJAMENTO</h2>
+                        <p>Garantir continuidade do tratamento e cuidado (Bottom of Funnel)</p>
+                    </div>
+                </div>
+                <div class="agents-grid">
+                    <div class="agent">
+                        <div class="agent-name">Agente de Engajamento (CRC)</div>
+                        <div class="agent-desc">Mantém comunicação proativa e relacionamento</div>
+                    </div>
+                    <div class="agent">
+                        <div class="agent-name">Agente de Pesquisa de Satisfação</div>
+                        <div class="agent-desc">Coleta feedback pós-consulta automaticamente</div>
+                    </div>
+                    <div class="agent">
+                        <div class="agent-name">Agente de Resgate/Reconquista</div>
+                        <div class="agent-desc">Reativa pacientes que faltaram ou sumiram</div>
+                    </div>
+                    <div class="agent">
+                        <div class="agent-name">Agente de Check-in</div>
+                        <div class="agent-desc">Facilita processo de chegada do paciente</div>
+                    </div>
+                    <div class="agent">
+                        <div class="agent-name">Agente de Comunicação Personalizada</div>
+                        <div class="agent-desc">Mensagens de aniversário, check-ins e proximidade</div>
+                    </div>
+                    <div class="agent">
+                        <div class="agent-name">Agente de Salas/Filas</div>
+                        <div class="agent-desc">Organiza fluxo do paciente na clínica</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flow-arrow">⬇️</div>
+
+            <!-- RETENÇÃO -->
+            <div class="stage retention">
+                <div class="stage-header">
+                    <div class="stage-icon">🔁</div>
+                    <div class="stage-title">
+                        <h2>4. RETENÇÃO</h2>
+                        <p>Manter paciente ativo ao longo do tempo, ampliando LTV (Loyalty Loop)</p>
+                    </div>
+                </div>
+                <div class="agents-grid">
+                    <div class="agent">
+                        <div class="agent-name">Agente de Resgate de Inativos</div>
+                        <div class="agent-desc">Busca pacientes que não voltam há muito tempo</div>
+                    </div>
+                    <div class="agent">
+                        <div class="agent-name">Agente de Programas de Indicação</div>
+                        <div class="agent-desc">Incentiva boca a boca (Member-Get-Member)</div>
+                    </div>
+                    <div class="agent">
+                        <div class="agent-name">Agente de Mensalidade/Seguros</div>
+                        <div class="agent-desc">Fideliza através de planos recorrentes</div>
+                    </div>
+                    <div class="agent suggested">
+                        <div class="agent-name">Agente de Conteúdo Educativo</div>
+                        <div class="agent-desc">Engaja com informações de valor contínuo</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>💡 <strong>Sistema completo de automação</strong> • Disponível via GitHub Pages</p>
+        </div>
+    </div>
+</body>
+</html>
