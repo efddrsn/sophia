@@ -158,6 +158,72 @@
             color: #5a6c7d;
             font-size: 0.85rem;
             line-height: 1.4;
+            margin-bottom: 15px;
+        }
+
+        .agent-metrics {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .metric {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.8rem;
+        }
+
+        .metric-label {
+            color: #6c757d;
+            font-weight: 500;
+            flex: 1;
+        }
+
+        .metric-value {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .revenue-input {
+            width: 60px;
+            padding: 2px 6px;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            text-align: center;
+        }
+
+        .priority-select {
+            width: 80px;
+            padding: 2px 4px;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            background: white;
+        }
+
+        .priority-high {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        .priority-medium {
+            background-color: #ffc107;
+            color: #212529;
+        }
+
+        .priority-low {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .metric-icon {
+            margin-right: 5px;
         }
 
         .suggested {
@@ -224,26 +290,134 @@
                     <div class="agent">
                         <div class="agent-name">Agente de Pesquisa de Leads</div>
                         <div class="agent-desc">Busca novos contatos e oportunidades automaticamente</div>
+                        <div class="agent-metrics">
+                            <div class="metric">
+                                <span class="metric-label">💰 Impacto Receita:</span>
+                                <div class="metric-value">
+                                    <input type="number" class="revenue-input" placeholder="%" min="0" max="100">
+                                    <span>%</span>
+                                </div>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">🎯 Prioridade:</span>
+                                <select class="priority-select">
+                                    <option value="">Selecione</option>
+                                    <option value="alta" class="priority-high">Alta</option>
+                                    <option value="media" class="priority-medium">Média</option>
+                                    <option value="baixa" class="priority-low">Baixa</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                     <div class="agent">
                         <div class="agent-name">Agente de Aquisição (CRM)</div>
                         <div class="agent-desc">Organiza leads e cria campanhas para atração</div>
+                        <div class="agent-metrics">
+                            <div class="metric">
+                                <span class="metric-label">💰 Impacto Receita:</span>
+                                <div class="metric-value">
+                                    <input type="number" class="revenue-input" placeholder="%" min="0" max="100">
+                                    <span>%</span>
+                                </div>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">🎯 Prioridade:</span>
+                                <select class="priority-select">
+                                    <option value="">Selecione</option>
+                                    <option value="alta" class="priority-high">Alta</option>
+                                    <option value="media" class="priority-medium">Média</option>
+                                    <option value="baixa" class="priority-low">Baixa</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                     <div class="agent">
                         <div class="agent-name">Agente de Persona</div>
                         <div class="agent-desc">Define perfis de pacientes ideais para segmentação</div>
+                        <div class="agent-metrics">
+                            <div class="metric">
+                                <span class="metric-label">💰 Impacto Receita:</span>
+                                <div class="metric-value">
+                                    <input type="number" class="revenue-input" placeholder="%" min="0" max="100">
+                                    <span>%</span>
+                                </div>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">🎯 Prioridade:</span>
+                                <select class="priority-select">
+                                    <option value="">Selecione</option>
+                                    <option value="alta" class="priority-high">Alta</option>
+                                    <option value="media" class="priority-medium">Média</option>
+                                    <option value="baixa" class="priority-low">Baixa</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                     <div class="agent suggested">
                         <div class="agent-name">Agente de Marketing de Conteúdo</div>
                         <div class="agent-desc">Cria materiais educativos e promocionais</div>
+                        <div class="agent-metrics">
+                            <div class="metric">
+                                <span class="metric-label">💰 Impacto Receita:</span>
+                                <div class="metric-value">
+                                    <input type="number" class="revenue-input" placeholder="%" min="0" max="100">
+                                    <span>%</span>
+                                </div>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">🎯 Prioridade:</span>
+                                <select class="priority-select">
+                                    <option value="">Selecione</option>
+                                    <option value="alta" class="priority-high">Alta</option>
+                                    <option value="media" class="priority-medium">Média</option>
+                                    <option value="baixa" class="priority-low">Baixa</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                     <div class="agent suggested">
                         <div class="agent-name">Agente de Campanhas Publicitárias</div>
                         <div class="agent-desc">Ativa mídia paga em redes sociais e Google</div>
+                        <div class="agent-metrics">
+                            <div class="metric">
+                                <span class="metric-label">💰 Impacto Receita:</span>
+                                <div class="metric-value">
+                                    <input type="number" class="revenue-input" placeholder="%" min="0" max="100">
+                                    <span>%</span>
+                                </div>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">🎯 Prioridade:</span>
+                                <select class="priority-select">
+                                    <option value="">Selecione</option>
+                                    <option value="alta" class="priority-high">Alta</option>
+                                    <option value="media" class="priority-medium">Média</option>
+                                    <option value="baixa" class="priority-low">Baixa</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                     <div class="agent">
                         <div class="agent-name">Agente de Matchmaking</div>
                         <div class="agent-desc">Direciona paciente para clínica/profissional ideal</div>
+                        <div class="agent-metrics">
+                            <div class="metric">
+                                <span class="metric-label">💰 Impacto Receita:</span>
+                                <div class="metric-value">
+                                    <input type="number" class="revenue-input" placeholder="%" min="0" max="100">
+                                    <span>%</span>
+                                </div>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">🎯 Prioridade:</span>
+                                <select class="priority-select">
+                                    <option value="">Selecione</option>
+                                    <option value="alta" class="priority-high">Alta</option>
+                                    <option value="media" class="priority-medium">Média</option>
+                                    <option value="baixa" class="priority-low">Baixa</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -263,26 +437,134 @@
                     <div class="agent">
                         <div class="agent-name">Agente de Pitch</div>
                         <div class="agent-desc">Elabora propostas comerciais personalizadas</div>
+                        <div class="agent-metrics">
+                            <div class="metric">
+                                <span class="metric-label">💰 Impacto Receita:</span>
+                                <div class="metric-value">
+                                    <input type="number" class="revenue-input" placeholder="%" min="0" max="100">
+                                    <span>%</span>
+                                </div>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">🎯 Prioridade:</span>
+                                <select class="priority-select">
+                                    <option value="">Selecione</option>
+                                    <option value="alta" class="priority-high">Alta</option>
+                                    <option value="media" class="priority-medium">Média</option>
+                                    <option value="baixa" class="priority-low">Baixa</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                     <div class="agent">
                         <div class="agent-name">Agente de Elaboração de Orçamentos</div>
                         <div class="agent-desc">Monta orçamentos baseados no perfil do paciente</div>
+                        <div class="agent-metrics">
+                            <div class="metric">
+                                <span class="metric-label">💰 Impacto Receita:</span>
+                                <div class="metric-value">
+                                    <input type="number" class="revenue-input" placeholder="%" min="0" max="100">
+                                    <span>%</span>
+                                </div>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">🎯 Prioridade:</span>
+                                <select class="priority-select">
+                                    <option value="">Selecione</option>
+                                    <option value="alta" class="priority-high">Alta</option>
+                                    <option value="media" class="priority-medium">Média</option>
+                                    <option value="baixa" class="priority-low">Baixa</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                     <div class="agent">
                         <div class="agent-name">Agente de Acompanhamento</div>
                         <div class="agent-desc">Follow-up de propostas e decisões pendentes</div>
+                        <div class="agent-metrics">
+                            <div class="metric">
+                                <span class="metric-label">💰 Impacto Receita:</span>
+                                <div class="metric-value">
+                                    <input type="number" class="revenue-input" placeholder="%" min="0" max="100">
+                                    <span>%</span>
+                                </div>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">🎯 Prioridade:</span>
+                                <select class="priority-select">
+                                    <option value="">Selecione</option>
+                                    <option value="alta" class="priority-high">Alta</option>
+                                    <option value="media" class="priority-medium">Média</option>
+                                    <option value="baixa" class="priority-low">Baixa</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                     <div class="agent">
                         <div class="agent-name">Agente de Agendamento</div>
                         <div class="agent-desc">Agenda primeira consulta ou avaliação</div>
+                        <div class="agent-metrics">
+                            <div class="metric">
+                                <span class="metric-label">💰 Impacto Receita:</span>
+                                <div class="metric-value">
+                                    <input type="number" class="revenue-input" placeholder="%" min="0" max="100">
+                                    <span>%</span>
+                                </div>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">🎯 Prioridade:</span>
+                                <select class="priority-select">
+                                    <option value="">Selecione</option>
+                                    <option value="alta" class="priority-high">Alta</option>
+                                    <option value="media" class="priority-medium">Média</option>
+                                    <option value="baixa" class="priority-low">Baixa</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                     <div class="agent">
                         <div class="agent-name">Agente de Triagem/Qualificação</div>
                         <div class="agent-desc">Entende necessidades e faz encaminhamento correto</div>
+                        <div class="agent-metrics">
+                            <div class="metric">
+                                <span class="metric-label">💰 Impacto Receita:</span>
+                                <div class="metric-value">
+                                    <input type="number" class="revenue-input" placeholder="%" min="0" max="100">
+                                    <span>%</span>
+                                </div>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">🎯 Prioridade:</span>
+                                <select class="priority-select">
+                                    <option value="">Selecione</option>
+                                    <option value="alta" class="priority-high">Alta</option>
+                                    <option value="media" class="priority-medium">Média</option>
+                                    <option value="baixa" class="priority-low">Baixa</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                     <div class="agent">
                         <div class="agent-name">Agente de Fila de Espera</div>
                         <div class="agent-desc">Ocupa horários vagos e converte indecisos</div>
+                        <div class="agent-metrics">
+                            <div class="metric">
+                                <span class="metric-label">💰 Impacto Receita:</span>
+                                <div class="metric-value">
+                                    <input type="number" class="revenue-input" placeholder="%" min="0" max="100">
+                                    <span>%</span>
+                                </div>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">🎯 Prioridade:</span>
+                                <select class="priority-select">
+                                    <option value="">Selecione</option>
+                                    <option value="alta" class="priority-high">Alta</option>
+                                    <option value="media" class="priority-medium">Média</option>
+                                    <option value="baixa" class="priority-low">Baixa</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -302,26 +584,134 @@
                     <div class="agent">
                         <div class="agent-name">Agente de Engajamento (CRC)</div>
                         <div class="agent-desc">Mantém comunicação proativa e relacionamento</div>
+                        <div class="agent-metrics">
+                            <div class="metric">
+                                <span class="metric-label">💰 Impacto Receita:</span>
+                                <div class="metric-value">
+                                    <input type="number" class="revenue-input" placeholder="%" min="0" max="100">
+                                    <span>%</span>
+                                </div>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">🎯 Prioridade:</span>
+                                <select class="priority-select">
+                                    <option value="">Selecione</option>
+                                    <option value="alta" class="priority-high">Alta</option>
+                                    <option value="media" class="priority-medium">Média</option>
+                                    <option value="baixa" class="priority-low">Baixa</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                     <div class="agent">
                         <div class="agent-name">Agente de Pesquisa de Satisfação</div>
                         <div class="agent-desc">Coleta feedback pós-consulta automaticamente</div>
+                        <div class="agent-metrics">
+                            <div class="metric">
+                                <span class="metric-label">💰 Impacto Receita:</span>
+                                <div class="metric-value">
+                                    <input type="number" class="revenue-input" placeholder="%" min="0" max="100">
+                                    <span>%</span>
+                                </div>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">🎯 Prioridade:</span>
+                                <select class="priority-select">
+                                    <option value="">Selecione</option>
+                                    <option value="alta" class="priority-high">Alta</option>
+                                    <option value="media" class="priority-medium">Média</option>
+                                    <option value="baixa" class="priority-low">Baixa</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                     <div class="agent">
                         <div class="agent-name">Agente de Resgate/Reconquista</div>
                         <div class="agent-desc">Reativa pacientes que faltaram ou sumiram</div>
+                        <div class="agent-metrics">
+                            <div class="metric">
+                                <span class="metric-label">💰 Impacto Receita:</span>
+                                <div class="metric-value">
+                                    <input type="number" class="revenue-input" placeholder="%" min="0" max="100">
+                                    <span>%</span>
+                                </div>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">🎯 Prioridade:</span>
+                                <select class="priority-select">
+                                    <option value="">Selecione</option>
+                                    <option value="alta" class="priority-high">Alta</option>
+                                    <option value="media" class="priority-medium">Média</option>
+                                    <option value="baixa" class="priority-low">Baixa</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                     <div class="agent">
                         <div class="agent-name">Agente de Check-in</div>
                         <div class="agent-desc">Facilita processo de chegada do paciente</div>
+                        <div class="agent-metrics">
+                            <div class="metric">
+                                <span class="metric-label">💰 Impacto Receita:</span>
+                                <div class="metric-value">
+                                    <input type="number" class="revenue-input" placeholder="%" min="0" max="100">
+                                    <span>%</span>
+                                </div>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">🎯 Prioridade:</span>
+                                <select class="priority-select">
+                                    <option value="">Selecione</option>
+                                    <option value="alta" class="priority-high">Alta</option>
+                                    <option value="media" class="priority-medium">Média</option>
+                                    <option value="baixa" class="priority-low">Baixa</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                     <div class="agent">
                         <div class="agent-name">Agente de Comunicação Personalizada</div>
                         <div class="agent-desc">Mensagens de aniversário, check-ins e proximidade</div>
+                        <div class="agent-metrics">
+                            <div class="metric">
+                                <span class="metric-label">💰 Impacto Receita:</span>
+                                <div class="metric-value">
+                                    <input type="number" class="revenue-input" placeholder="%" min="0" max="100">
+                                    <span>%</span>
+                                </div>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">🎯 Prioridade:</span>
+                                <select class="priority-select">
+                                    <option value="">Selecione</option>
+                                    <option value="alta" class="priority-high">Alta</option>
+                                    <option value="media" class="priority-medium">Média</option>
+                                    <option value="baixa" class="priority-low">Baixa</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                     <div class="agent">
                         <div class="agent-name">Agente de Salas/Filas</div>
                         <div class="agent-desc">Organiza fluxo do paciente na clínica</div>
+                        <div class="agent-metrics">
+                            <div class="metric">
+                                <span class="metric-label">💰 Impacto Receita:</span>
+                                <div class="metric-value">
+                                    <input type="number" class="revenue-input" placeholder="%" min="0" max="100">
+                                    <span>%</span>
+                                </div>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">🎯 Prioridade:</span>
+                                <select class="priority-select">
+                                    <option value="">Selecione</option>
+                                    <option value="alta" class="priority-high">Alta</option>
+                                    <option value="media" class="priority-medium">Média</option>
+                                    <option value="baixa" class="priority-low">Baixa</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -341,18 +731,90 @@
                     <div class="agent">
                         <div class="agent-name">Agente de Resgate de Inativos</div>
                         <div class="agent-desc">Busca pacientes que não voltam há muito tempo</div>
+                        <div class="agent-metrics">
+                            <div class="metric">
+                                <span class="metric-label">💰 Impacto Receita:</span>
+                                <div class="metric-value">
+                                    <input type="number" class="revenue-input" placeholder="%" min="0" max="100">
+                                    <span>%</span>
+                                </div>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">🎯 Prioridade:</span>
+                                <select class="priority-select">
+                                    <option value="">Selecione</option>
+                                    <option value="alta" class="priority-high">Alta</option>
+                                    <option value="media" class="priority-medium">Média</option>
+                                    <option value="baixa" class="priority-low">Baixa</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                     <div class="agent">
                         <div class="agent-name">Agente de Programas de Indicação</div>
                         <div class="agent-desc">Incentiva boca a boca (Member-Get-Member)</div>
+                        <div class="agent-metrics">
+                            <div class="metric">
+                                <span class="metric-label">💰 Impacto Receita:</span>
+                                <div class="metric-value">
+                                    <input type="number" class="revenue-input" placeholder="%" min="0" max="100">
+                                    <span>%</span>
+                                </div>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">🎯 Prioridade:</span>
+                                <select class="priority-select">
+                                    <option value="">Selecione</option>
+                                    <option value="alta" class="priority-high">Alta</option>
+                                    <option value="media" class="priority-medium">Média</option>
+                                    <option value="baixa" class="priority-low">Baixa</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                     <div class="agent">
                         <div class="agent-name">Agente de Mensalidade/Seguros</div>
                         <div class="agent-desc">Fideliza através de planos recorrentes</div>
+                        <div class="agent-metrics">
+                            <div class="metric">
+                                <span class="metric-label">💰 Impacto Receita:</span>
+                                <div class="metric-value">
+                                    <input type="number" class="revenue-input" placeholder="%" min="0" max="100">
+                                    <span>%</span>
+                                </div>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">🎯 Prioridade:</span>
+                                <select class="priority-select">
+                                    <option value="">Selecione</option>
+                                    <option value="alta" class="priority-high">Alta</option>
+                                    <option value="media" class="priority-medium">Média</option>
+                                    <option value="baixa" class="priority-low">Baixa</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                     <div class="agent suggested">
                         <div class="agent-name">Agente de Conteúdo Educativo</div>
                         <div class="agent-desc">Engaja com informações de valor contínuo</div>
+                        <div class="agent-metrics">
+                            <div class="metric">
+                                <span class="metric-label">💰 Impacto Receita:</span>
+                                <div class="metric-value">
+                                    <input type="number" class="revenue-input" placeholder="%" min="0" max="100">
+                                    <span>%</span>
+                                </div>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">🎯 Prioridade:</span>
+                                <select class="priority-select">
+                                    <option value="">Selecione</option>
+                                    <option value="alta" class="priority-high">Alta</option>
+                                    <option value="media" class="priority-medium">Média</option>
+                                    <option value="baixa" class="priority-low">Baixa</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -362,5 +824,80 @@
             <p>💡 <strong>Sistema completo de automação</strong> • Disponível via GitHub Pages</p>
         </div>
     </div>
+
+    <script>
+        // Função para alterar cor do select baseado na prioridade
+        function updatePriorityColor(select) {
+            select.className = 'priority-select';
+            if (select.value === 'alta') {
+                select.classList.add('priority-high');
+            } else if (select.value === 'media') {
+                select.classList.add('priority-medium');
+            } else if (select.value === 'baixa') {
+                select.classList.add('priority-low');
+            }
+        }
+
+        // Adicionar event listeners para todos os selects de prioridade
+        document.addEventListener('DOMContentLoaded', function() {
+            const prioritySelects = document.querySelectorAll('.priority-select');
+            prioritySelects.forEach(select => {
+                select.addEventListener('change', function() {
+                    updatePriorityColor(this);
+                });
+            });
+
+            // Função para salvar dados no localStorage
+            function saveData() {
+                const agents = [];
+                document.querySelectorAll('.agent').forEach((agent, index) => {
+                    const name = agent.querySelector('.agent-name').textContent;
+                    const revenueInput = agent.querySelector('.revenue-input');
+                    const prioritySelect = agent.querySelector('.priority-select');
+                    
+                    if (revenueInput && prioritySelect) {
+                        agents.push({
+                            name: name,
+                            revenue: revenueInput.value,
+                            priority: prioritySelect.value
+                        });
+                    }
+                });
+                localStorage.setItem('agentEvaluations', JSON.stringify(agents));
+            }
+
+            // Função para carregar dados do localStorage
+            function loadData() {
+                const saved = localStorage.getItem('agentEvaluations');
+                if (saved) {
+                    const agents = JSON.parse(saved);
+                    document.querySelectorAll('.agent').forEach((agent, index) => {
+                        const name = agent.querySelector('.agent-name').textContent;
+                        const savedAgent = agents.find(a => a.name === name);
+                        
+                        if (savedAgent) {
+                            const revenueInput = agent.querySelector('.revenue-input');
+                            const prioritySelect = agent.querySelector('.priority-select');
+                            
+                            if (revenueInput) revenueInput.value = savedAgent.revenue;
+                            if (prioritySelect) {
+                                prioritySelect.value = savedAgent.priority;
+                                updatePriorityColor(prioritySelect);
+                            }
+                        }
+                    });
+                }
+            }
+
+            // Adicionar event listeners para auto-save
+            document.querySelectorAll('.revenue-input, .priority-select').forEach(input => {
+                input.addEventListener('change', saveData);
+                input.addEventListener('input', saveData);
+            });
+
+            // Carregar dados salvos na inicialização
+            loadData();
+        });
+    </script>
 </body>
 </html>
